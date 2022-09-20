@@ -1,0 +1,1 @@
+# rich-link-for-webpage-bookmarklet
