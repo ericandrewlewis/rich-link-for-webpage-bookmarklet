@@ -13,5 +13,5 @@ Create a bookmark in your browser.
 Copy and paste the following into the bookmark's "URL" field:
 
 ```
-javascript:(function(){  const pageTitle = document.title;  const url = window.location.href;    const clipboardContentHtml = `<a href="${url}">${pageTitle}</a>`;  function listener(e) {    e.clipboardData.setData("text/html", clipboardContentHtml);    e.clipboardData.setData("text/plain", url);    e.preventDefault();  }  document.addEventListener("copy", listener);  document.execCommand("copy");  document.removeEventListener("copy", listener);})();
+javascript:(function () {  let pageTitle = document.title;  pageTitle = pageTitle.replace(' - Google Docs', '');  const url = window.location.href;  const clipboardContentHtml = `<a href="${url}">${pageTitle}</a>`;  function listener(e) {;    e.clipboardData.setData("text/html", clipboardContentHtml);    e.clipboardData.setData("text/plain", url);    e.preventDefault();  } document.addEventListener("copy", listener);  document.execCommand("copy");  document.removeEventListener("copy", listener);})();
 ```
